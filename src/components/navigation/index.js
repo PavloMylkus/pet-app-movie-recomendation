@@ -18,6 +18,9 @@ import {
 import MenuIcon from '@mui/icons-material/Menu';
 import SettingsIcon from '@mui/icons-material/Settings';
 import { Link as RouterLink } from "react-router-dom";
+import { teal } from '@mui/material/colors';
+const primary = teal[900];
+
 
 const Navigation = () => {
 	const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -45,8 +48,10 @@ const Navigation = () => {
 	);
 	return (
 
-		<Box>
-			<AppBar position="static">
+		<Box >
+			<AppBar
+				position="static"
+				sx={{ background: primary }}>
 				<Toolbar>
 					<Hidden only={['lg', 'xl']}>
 						<IconButton
@@ -60,8 +65,14 @@ const Navigation = () => {
 							<MenuIcon />
 						</IconButton>
 					</Hidden>
-					<Link component={RouterLink} to='/'>
-						<Typography variant="h6" component="div" sx={{ flexGrow: 1, color: '#fff' }}>
+					<Link
+						component={RouterLink}
+						to='/'
+						sx={{ textDecoration: 'none' }}>
+						<Typography
+							variant="h6"
+							component="div"
+							sx={{ flexGrow: 1, color: '#fff' }}>
 							Movies Recomendation
 						</Typography>
 					</Link>
