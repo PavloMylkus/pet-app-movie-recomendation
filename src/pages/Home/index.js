@@ -5,6 +5,7 @@ import {
 	Paper
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { MovieCard } from '../../components';
 
 
 const SelectedMovies = styled(Paper)(({ theme }) => ({
@@ -28,7 +29,20 @@ const Home = () => {
 				</Grid>
 				<Grid item xs={12} md={8}>
 					<Paper>
-						Lict of movies
+						<Box sx={{ flexGrow: 1, marginTop: 2, padding: 1 }}>
+							<Grid container spacing={2}>
+								<Grid item xs={12} sm={6} md={4} lg={3}>
+									<MovieCard />
+								</Grid>
+								<Grid item xs={12} sm={6} md={4} lg={3}>
+									<MovieCard />
+								</Grid>
+								<Grid item xs={12} sm={6} md={4} lg={3}>
+									<MovieCard />
+								</Grid>
+
+							</Grid>
+						</Box>
 					</Paper>
 				</Grid>
 				<Grid item xs={12} md={4}>
